@@ -16,9 +16,9 @@ module.exports = function fastMap (subject, fn, thisContext) {
   var length = subject.length,
       result = new Array(length),
       iterator = thisContext !== undefined ? bindInternal3(fn, thisContext) : fn,
-      i;
-  for (i = 0; i < length; i++) {
-    result[i] = iterator(subject[i], i, subject);
+      i = 0;
+  while (i < length) {
+    result[i] = iterator(subject[i], i++, subject);
   }
   return result;
 };
