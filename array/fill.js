@@ -22,7 +22,9 @@ module.exports = function fastFill (subject, value, start, end) {
   if (end === undefined) {
     end = length;
   }
-  for (i = start; i < end; i++) {
+
+  i = start - 1;
+  while (++i < end) {
     subject[i] = value;
   }
   return subject;
