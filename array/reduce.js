@@ -18,13 +18,13 @@ module.exports = function fastReduce (subject, fn, initialValue, thisContext) {
       iterator = thisContext !== undefined ? bindInternal4(fn, thisContext) : fn,
       i, result;
 
-  if (initialValue === undefined) {
-    i = 0;
-    result = subject[0];
-  }
-  else {
+  if (initialValue !== undefined) {
     i = -1;
     result = initialValue;
+  }
+  else {
+    i = 0;
+    result = subject[0];
   }
 
   while (++i < length) {
