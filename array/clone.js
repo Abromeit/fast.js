@@ -13,8 +13,8 @@
 module.exports = function fastCloneArray (input) {
   var length = input.length,
       sliced = new Array(length),
-      i;
-  for (i = 0; i < length; i++) {
+      i = -1;
+  while (++i < length) {
     sliced[i] = input[i];
   }
   return sliced;
