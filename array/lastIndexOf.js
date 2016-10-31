@@ -20,7 +20,9 @@ module.exports = function fastLastIndexOf (subject, target, fromIndex) {
       i += length;
     }
   }
-  for (; i >= 0; i--) {
+
+  ++i;
+  while (--i >= 0) {
     if (subject[i] === target) {
       return i;
     }
