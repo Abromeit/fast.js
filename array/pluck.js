@@ -12,10 +12,11 @@ module.exports = function fastPluck (input, field) {
   var length = input.length,
       plucked = [],
       count = 0,
-      value, i;
+      i = 0,
+      value;
 
-  for (i = 0; i < length; i++) {
-    value = input[i];
+  while (i < length) {
+    value = input[i++];
     if (value != null && value[field] !== undefined) {
       plucked[count++] = value[field];
     }
