@@ -19,16 +19,16 @@ module.exports = function fastReduce (subject, fn, initialValue, thisContext) {
       i, result;
 
   if (initialValue === undefined) {
-    i = 1;
+    i = 0;
     result = subject[0];
   }
   else {
-    i = 0;
+    i = -1;
     result = initialValue;
   }
 
-  while (i < length) {
-    result = iterator(result, subject[i], i++, subject);
+  while (++i < length) {
+    result = iterator(result, subject[i], i, subject);
   }
 
   return result;
