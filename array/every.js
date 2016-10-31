@@ -15,8 +15,8 @@ var bindInternal3 = require('../function/bindInternal3');
 module.exports = function fastEvery (subject, fn, thisContext) {
   var length = subject.length,
       iterator = thisContext !== undefined ? bindInternal3(fn, thisContext) : fn,
-      i;
-  for (i = 0; i < length; i++) {
+      i = -1;
+  while (++i < length) {
     if (!iterator(subject[i], i, subject)) {
       return false;
     }
