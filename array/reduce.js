@@ -27,8 +27,8 @@ module.exports = function fastReduce (subject, fn, initialValue, thisContext) {
     result = initialValue;
   }
 
-  for (; i < length; i++) {
-    result = iterator(result, subject[i], i, subject);
+  while (i < length) {
+    result = iterator(result, subject[i], i++, subject);
   }
 
   return result;
