@@ -24,7 +24,8 @@ module.exports = function fastIndexOf (subject, target, fromIndex) {
     }
   }
 
-  for (; i < length; i++) {
+  --i;
+  while (++i < length) {
     if (subject[i] === target) {
       return i;
     }
