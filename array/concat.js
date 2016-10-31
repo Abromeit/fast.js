@@ -14,13 +14,15 @@
 module.exports = function fastConcat () {
   var length = arguments.length,
       arr = [],
-      i, item, childLength, j;
+      i = -1, 
+      item, childLength, j;
 
-  for (i = 0; i < length; i++) {
+  while (++i < length) {
     item = arguments[i];
     if (Array.isArray(item)) {
+      j = -1;
       childLength = item.length;
-      for (j = 0; j < childLength; j++) {
+      while (++j < childLength) {
         arr.push(item[j]);
       }
     }
