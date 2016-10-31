@@ -16,8 +16,8 @@ module.exports = function fastFilter (subject, fn, thisContext) {
   var length = subject.length,
       result = [],
       iterator = thisContext !== undefined ? bindInternal3(fn, thisContext) : fn,
-      i;
-  for (i = 0; i < length; i++) {
+      i = -1;
+  while (++i < length) {
     if (iterator(subject[i], i, subject)) {
       result.push(subject[i]);
     }
